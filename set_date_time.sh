@@ -2,6 +2,7 @@
 
 # set NEW_DATE from first argument
 NEW_DATE="${1}"
+TIME_SERVER="${2:-us.pool.ntp.org}"
 
 # check to make sure a time or ntp is provided
 if [ -z "${NEW_DATE}" ]
@@ -21,7 +22,7 @@ echo -n "Updated date/time: "
 if [ "${NEW_DATE}" == "ntp" ]
 then
   # set time via ntp
-  ntpd -q -n -p us.pool.ntp.org 1> /dev/null
+  ntpd -q -n -p ${TIME_SERVER} 1> /dev/null
   date
 else
   # set date manually
