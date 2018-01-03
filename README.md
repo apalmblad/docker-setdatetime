@@ -10,7 +10,7 @@ To pull this image:
 ## Example usage
 
 #### Set date/time (manually setting time from host)
-`docker run -it --rm --privileged mbentley/setdatetime $(date "+%Y%m%d%H%M.%S")`
+`docker run -it --rm --privileged mbentley/setdatetime $(date -u "+%Y%m%d%H%M.%S")`
 
 #### Set date/time using NTP
 `docker run -it --rm --privileged mbentley/setdatetime ntp`
